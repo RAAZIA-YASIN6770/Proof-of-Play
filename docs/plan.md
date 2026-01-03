@@ -25,6 +25,22 @@ This plan is based on the requirements outlined in [Software_Requirements_Specif
 - [ ] Create a game flow diagram
 
 ## 2. System Design
+
+### Optional Features to Include
+
+1. **Mini Puzzles:**
+	- Logical or system-based challenges embedded within levels to increase engagement and variety.
+	- Can be standalone or integrated into main questions.
+
+2. **Misleading Elements:**
+	- Trap options or distractors designed to test and improve the player's critical thinking.
+	- Appear as plausible but incorrect answers or misleading clues.
+
+3. **Branching Paths:**
+	- Multiple possible routes or sequences through the game, determined by player choices or randomization.
+	- Ensures each playthrough is unique and increases replayability.
+
+These features should be considered in the class design (GameEngine, Level, Question, Player) and reflected in UML diagrams and implementation.
 - [ ] Design class structure: GameEngine, Level, Question, Player
 - [ ] Plan hint and reset logic
 - [ ] Plan randomization for unique player experience
