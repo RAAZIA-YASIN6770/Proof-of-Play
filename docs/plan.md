@@ -112,6 +112,94 @@ END (Game Complete)
 - [ ] Prepare UML/class diagrams
 
 ## 3. Level & Question Design
+[//]: # (Draft Question Bank Section)
+
+### Draft Question Bank with Hints, Traps, and Branching
+
+#### Level 1: Basic Logic
+**Question:**
+What will be the output of the following Python code?
+
+```python
+x = 3
+y = 2
+print(x ** y)
+```
+
+**Options:**
+- A) 6
+- B) 9   ← Correct
+- C) 5
+- D) 8   ← Trap (confuses ** with *)
+
+**Hint (after 3 failed attempts):**
+The `**` operator means exponentiation (power), not multiplication.
+
+**Branching:**
+- If player selects B: Go to Level 2A (calculation)
+- If player selects D: Go to Level 2B (trap path)
+- Any other: Retry Level 1
+
+---
+
+#### Level 2A: Calculation Path
+**Question:**
+If a function returns `True` only when the input is an even number greater than 10, which of the following will return `True`?
+
+**Options:**
+- A) 8
+- B) 11
+- C) 12   ← Correct
+- D) 13
+
+**Hint (after 3 failed attempts):**
+Check both conditions: evenness and greater than 10.
+
+**Branching:**
+- If player selects C: Go to Level 3 (advanced logic)
+- Any other: Retry Level 2A
+
+---
+
+#### Level 2B: Trap Path
+**Question:**
+What is the output of: `print(2 + 2 * 2)`?
+
+**Options:**
+- A) 8   ← Trap (if player ignores operator precedence)
+- B) 6   ← Correct
+- C) 4
+- D) 2
+
+**Hint (after 3 failed attempts):**
+Remember operator precedence: multiplication before addition.
+
+**Branching:**
+- If player selects B: Go to Level 3 (advanced logic)
+- Any other: Retry Level 2B
+
+---
+
+#### Level 3: Advanced Logic
+**Question:**
+Which of the following code snippets will output all even numbers from 1 to 10 (inclusive)?
+
+**Options:**
+- A) `for i in range(1, 11):\n  if i % 2 == 0: print(i)`   ← Correct
+- B) `for i in range(2, 10): print(i)`
+- C) `for i in range(1, 10):\n  if i % 2 == 1: print(i)`
+- D) `for i in range(1, 11):\n  if i % 2 == 1: print(i)`   ← Trap (odd numbers)
+
+**Hint (after 3 failed attempts):**
+Check the range and the condition for even numbers.
+
+**Branching:**
+- If player selects A: Game Complete (win)
+- Any other: Retry Level 3
+
+---
+
+// More questions, traps, and branches can be added for further levels.
 - [ ] Create a question bank with system-based questions
 - [ ] Design levels and mini puzzles
 - [ ] Add misleading elements and branching paths
