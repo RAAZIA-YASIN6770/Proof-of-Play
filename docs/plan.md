@@ -41,6 +41,71 @@ This plan is based on the requirements outlined in [Software_Requirements_Specif
 	- Ensures each playthrough is unique and increases replayability.
 
 These features should be considered in the class design (GameEngine, Level, Question, Player) and reflected in UML diagrams and implementation.
+[//]: # (Game Flow Diagram Section)
+
+## Game Flow Diagram
+
+Below is a text-based Game Flow Diagram outlining the player's journey, level reset and hint triggers, and the integration of branching paths and misleading elements:
+
+```
+START
+	|
+	v
+[Game Introduction]
+	|
+	v
+FOR each Level in Game:
+		|
+		v
+	[Present Question or Mini Puzzle]
+		|
+		v
+	[Player Submits Answer]
+		|
+		+---> [Is Answer Correct?]
+						|         |
+				 Yes|         |No
+						v         v
+			[Advance to   [Increment Wrong Attempt Counter]
+			 Next Level]        |
+						|            +---> [Wrong Attempts >= 3?]
+						|                      |         |
+						|                   Yes|         |No
+						|                      v         v
+						|              [Show Hint]   [Allow Retry]
+						|                      |
+						|                      v
+						|              [Wrong Attempts >= Max?]
+						|                      |         |
+						|                   Yes|         |No
+						|                      v         v
+						|              [Reset Level]  [Allow Retry]
+						|
+						v
+	[Check for Branching Path or Misleading Element]
+						|
+						+---> [Branching Path?]
+						|         |
+				 Yes|         |No
+						v         v
+	 [Player Chooses   [Continue Linear Path]
+		Path/Option]           |
+						|             v
+						v         [Next Level or End]
+	[Follow Chosen Path]
+						|
+						v
+			[Next Level or End]
+
+END (Game Complete)
+```
+
+**Key Points:**
+- On each wrong answer, the wrong attempt counter increases. After 3 wrong attempts, a hint is shown. If the player reaches the maximum allowed wrong attempts, the level resets.
+- Branching paths and misleading elements are checked after each question/mini puzzle, allowing for unique routes and replayability.
+- Mini puzzles can appear as part of a level or as standalone challenges.
+- The game ends when all levels (or a winning path) are completed.
+
 - [ ] Design class structure: GameEngine, Level, Question, Player
 - [ ] Plan hint and reset logic
 - [ ] Plan randomization for unique player experience
